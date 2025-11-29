@@ -23,8 +23,8 @@
     "noFallthroughCasesInSwitch": false,
     "strict": true,
     "paths": {
-      "@prisma/*": ["./src/*"],
-      "@src/*": ["./src"]
+      "prisma/*": ["./prisma/*"],
+      "src/*": ["./src"]
     }
   }
 }
