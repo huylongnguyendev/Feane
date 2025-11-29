@@ -44,6 +44,22 @@ model Category {
   id          String   @id @default(uuid())
   name        String
   description String
+  foods       Food[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Food {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  origPrice   Int      @default(0)
+  price       Int      @default(0)
+  discount    Int      @default(0)
+  stockQty    Int      @default(0)
+  saleCount   Int      @default(0)
+  categoryId  String
+  category    Category @relation(fields: [categoryId], references: [id])
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
